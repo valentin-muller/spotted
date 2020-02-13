@@ -6,7 +6,7 @@ const zxcvbn = require("zxcvbn");
 const saltRounds = 10;
 
 authRouter.post("/", (req, res, next) => {
-    const { firstName, lastName, username, password, gender, course}
+  const { firstName, lastName, username, password, gender, course } = req.body;
   if (password === "" || username === "") {
     // what happens if PW or username is blank?
     res.render("auth/signup-form", { errorMsg: "Make sure to enter a Username or a Password" });
@@ -50,7 +50,8 @@ authRouter.post("/", (req, res, next) => {
     .catch(err => console.log(err));
 });
 
-authRouter.get("/", (req, res, next) => {});
-
+authRouter.get("/", (req, res, next) => {
+  res.render("auth/signup-form");
+});
 
 module.exports = authRouter;

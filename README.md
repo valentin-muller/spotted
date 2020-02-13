@@ -19,24 +19,26 @@ Upon login, the user will have access to a newsfeed, where he_she can access to 
 - [ ] login - As a user I want to be able to log in on the web page so that I can get to my account.
 - [ ] logout - As a user I want to be able to log out from the web page so that I can make sure no one will access my account
 - [ ] favorites - As a user I want to be able to access the bookmarked ‘Gossips’
+- [ ] - profile - As a user I want to be able to access my profile where I can find info about me and my previos
 
 -
 
 <br>
 
-## Routes (Back-end):
+## API Routes (Back-end):
 
-| Method | Route | Description | Request - Body |
-| ————— | ————————————————— | —————————————————————————————— | ———————————————————————————— |
-| `GET` | `/` | Main page route. Renders home `index` view. | |
-| `GET` | `/login` | Renders `login` form view. | |
-| `POST` | `/login` | Sends Login form data to the server. | { email, password } |
-| `GET` | `/signup` | Renders `signup` form view. | |
-| `POST` | `/signup` | Sends Sign Up info to the server and creates user in the DB. | { email, password } |
-
-| `GET` | `/private/bookmarks` | Private route. Render the `bookmarks` view. | |
-| `POST` | `/private/bookmarks/` | Private route. Adds a new favourite ‘Gossip’ for the current user. | |
-| `DELETE` | `/private/favorites/:gossipId` | Private route. Deletes the existing bookmarked ‘Gossip’ from the current user. | |
+| **Method** | **Route**                      | **Description**                                                                | Request - Body               |
+| ---------- | ------------------------------ | ------------------------------------------------------------------------------ | ---------------------------- |
+| —————      | —————————————————              | ——————————————————————————————                                                 | ———————————————————————————— |
+| `GET`      | `/`                            | Main page route. Renders home `index` view.                                    |                              |
+| `GET`      | `/login`                       | Renders `login` form view.                                                     |                              |
+| `POST`     | `/login`                       | Sends Login form data to the server.                                           | { email, password }          |
+| `GET`      | `/signup`                      | Renders `signup` form view.                                                    |                              |
+| `POST`     | `/signup`                      | Sends Sign Up info to the server and creates user in the DB.                   | { email, password }          |
+| `GET`      | `/profile`                     | Private route. Render the `profile` view and the personal messages.            |                              |
+| `GET`      | `/profile/bookmarks`           | Private route. Render the `bookmarks` view.                                    |                              |
+| `POST`     | `/profile/bookmarks/`          | Private route. Adds a new favourite ‘Gossip’ for the current user.             |                              |
+| `DELETE`   | `/private/favorites/:gossipId` | Private route. Deletes the existing bookmarked ‘Gossip’ from the current user. |                              |
 
 ## Models
 
@@ -51,21 +53,25 @@ USER model
     course = String,
     favouritesArr = []
     gossipArr = []
+	isAdmin = Boolean
 
 }
 
 
 ```
 
-Favorites model
+MESSAGES model
 
 ```javascript
 {
-  headerMessage: String, (An anonimous Girl / Guy 		from WEBDEV / DATA / UX - UI),
+  headerMessage: String,
   gossipMessage: String,
-  upvote / downvote: Boolean
+  upvote/downvote: Boolean
   isFavourite: Boolean
+  pendingMessage = [],
+  approvesMessages = []
 }
+
 
 
 ```
