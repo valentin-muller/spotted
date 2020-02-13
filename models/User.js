@@ -8,7 +8,7 @@ const userSchema = new Schema({
   gender: String,
   course: String,
   favourites: [],
-  personalGossips: []
+  messages: []
 });
 
 const User = mongoose.model("User", userSchema);
