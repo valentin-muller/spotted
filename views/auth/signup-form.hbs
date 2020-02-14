@@ -1,4 +1,4 @@
-<form action="/signup" method="post">
+<form action="/signup-form" method="post">
     <h2>Sign Up</h2>
     <label for="">Name</label>
     <input type="text" name="firstName">
@@ -6,25 +6,32 @@
     <label for="">Last Name</label>
     <input type="text" name="lastName">
 
-    <label for="">Gender</label>
-    <input type="radio" id="male" name="male" value="male" checked>
+    {{!-- <label for="">Gender</label>
+    <input type="radio" id="male" name="male" value="male">
     <label for="male">Male</label>
 
     <input type="radio" id="female" name="female" value="female">
-    <label for="female">Female</label>
+    <label for="female">Female</label> --}}
+{{!-- <label for="gender">Gender</label>
 
-    <label for="cars">Course</label>
+<select id="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+</select>
 
+
+    <label for="course">Course</label>
     <select id="course">
         <option value="web">Web Developement</option>
         <option value="uxui">UX-UI</option>
         <option value="data">Data</option>
-    </select>
+    </select> --}}
 
-    <input type="text" name="course">
+
     <label for="">Username</label>
     <input type="text" name="username">
     <label for="">Password</label>
     <input type="password" name="password">
-    <button>Sign Up</button>
+    <button type="submit">Sign Up</button>
 </form>

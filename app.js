@@ -3,7 +3,6 @@ require("dotenv").config();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
-const favicon = require("serve-favicon");
 const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
@@ -16,7 +15,7 @@ const app = express();
 const router = require("./routes/index");
 
 mongoose
-  .connect("mongodb://localhost/PLACEHOLDER", { useNewUrlParser: true })
+  .connect("mongodb://localhost/users", { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
@@ -64,5 +63,8 @@ app.use((req, res, next) => {
   err.status = 404;
   next(err);
 });
+
+// app.listen()
+
 
 module.exports = app;
