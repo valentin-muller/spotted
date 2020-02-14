@@ -39,16 +39,10 @@ authRouter.post("/", (req, res, next) => {
         lastName,
         username,
         password: hasedPW,
-        // gender,
-        // course
-        // favourites,
-        // personalGossips
+        gender,
+        course
       })
-        .then(createdUser => {
-          res.redirect("/");
-          console.log(createdUser);
-          
-        })
+        .then(createdUser => res.redirect("/"))
         .catch(err =>
           res.render("auth/signup-form", {
             errorMessage: "Error while creating new User"

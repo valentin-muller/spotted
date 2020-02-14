@@ -7,11 +7,11 @@ const userSchema = new Schema({
   lastName: { type: String, required: true },
   username: { type: String, required: true },
   password: { type: String, required: true },
-  gender: { type: String, required: true, enum: ["male", "memale", "0ther"] },
+  gender: { type: String, required: true, enum: ["Male", "Female", "Other"] },
   course: {
     type: String,
     required: true,
-    enum: ["web", "data", "uxui"]
+    enum: ["Web Development", "Data Analytics", "UX-UI Design"]
   },
   favourites: [],
   messages: [],
