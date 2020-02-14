@@ -10,6 +10,8 @@ const authRouter = require("./auth/auth");
 router.use("/login", loginRouter);
 router.use("/logout", logoutRouter);
 router.use("/signup", authRouter);
+// router.use('/message', messageRouter)
+
 
 //GET home page
 router.get("/", (req, res) => {

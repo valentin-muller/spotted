@@ -27,18 +27,18 @@ Upon login, the user will have access to a newsfeed, where he_she can access to 
 
 ## API Routes (Back-end):
 
-| **Method** | **Route**                      | **Description**                                                                | Request - Body               |
-| ---------- | ------------------------------ | ------------------------------------------------------------------------------ | ---------------------------- |
-| —————      | —————————————————              | ——————————————————————————————                                                 | ———————————————————————————— |
-| `GET`      | `/`                            | Main page route. Renders home `index` view.                                    |                              |
-| `GET`      | `/login`                       | Renders `login` form view.                                                     |                              |
-| `POST`     | `/login`                       | Sends Login form data to the server.                                           | { email, password }          |
-| `GET`      | `/signup`                      | Renders `signup` form view.                                                    |                              |
-| `POST`     | `/signup`                      | Sends Sign Up info to the server and creates user in the DB.                   | { email, password }          |
-| `GET`      | `/profile`                     | Private route. Render the `profile` view and the personal messages.            |                              |
-| `GET`      | `/profile/bookmarks`           | Private route. Render the `bookmarks` view.                                    |                              |
-| `POST`     | `/profile/bookmarks/`          | Private route. Adds a new favourite ‘Gossip’ for the current user.             |                              |
-| `DELETE`   | `/private/favorites/:gossipId` | Private route. Deletes the existing bookmarked ‘Gossip’ from the current user. |                              |
+| **Method** | **Route**                      | **Description**                                              | Request - Body               |
+| ---------- | ------------------------------ | ------------------------------------------------------------ | ---------------------------- |
+| —————      | —————————————————              | ——————————————————————————————                               | ———————————————————————————— |
+| `GET`      | `/`                            | Main page route. Renders home `index` view.                  |                              |
+| `GET`      | `/login`                       | Renders `login` form view.                                   |                              |
+| `POST`     | `/login`                       | Sends Login form data to the server.                         | { email, password }          |
+| `GET`      | `/signup`                      | Renders `signup` form view.                                  |                              |
+| `POST`     | `/signup`                      | Sends Sign Up info to the server and creates user in the DB. | { email, password }          |
+| `GET`      | `/profile`                     | Private route. Render the `profile` view and the personal messages. |                              |
+| `GET`      | `/profile/bookmarks`           | Private route. Render the `bookmarks` view.                  |                              |
+| `POST`     | `/profile/bookmarks/`          | Private route. Adds a new favourite ‘Gossip’ for the current user. |                              |
+| `DELETE`   | `/profile/bookmarks/:gossipId` | Private route. Deletes the existing bookmarked ‘Gossip’ from the current user. |                              |
 
 ## Models
 
@@ -51,9 +51,11 @@ USER model
     password: String,
     sex = String,
     course = String,
-    favouritesArr = []
-    gossipArr = []
-	isAdmin = Boolean
+    favouritesArr = [],
+    gossipArr = [],
+    isAdmin = Boolean,
+    pendingGossip = [],
+    
 
 }
 
@@ -66,7 +68,8 @@ MESSAGES model
 {
   headerMessage: String,
   gossipMessage: String,
-  upvote/downvote: Boolean
+  upvotes: Number,
+  downvotes: Number,
   isFavourite: Boolean
   pendingMessage = [],
   approvesMessages = []
