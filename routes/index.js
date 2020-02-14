@@ -3,8 +3,8 @@ const router = express.Router();
 //ROUTERS
 const loginRouter = require("./auth/login");
 const logoutRouter = require("./auth/logout");
-const authRouter = req("./auth");
-const privateRouter = req("./private");
+const authRouter = require("./auth/auth");
+const privateRouter = require("./private/private");
 //AUTH
 router.use("/login", loginRouter);
 router.use("/logout", logoutRouter);

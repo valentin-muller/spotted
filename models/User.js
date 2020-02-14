@@ -6,11 +6,11 @@ const userSchema = new Schema({
   lastName: { type: String, required: true },
   username: { type: String, required: true },
   password: { type: String, required: true },
-  gender: { type: String, required: true, enum: ["Male", "Female", "Other"] },
+  gender: { type: String, required: true, enum: ["male", "female", "other"] },
   course: {
     type: String,
     required: true,
-    enum: ["Web Development", "Data Analytics", "UX-UI Design"]
+    enum: ["web", "uxui", "data"]
   },
   favourites: [],
   messages: [],

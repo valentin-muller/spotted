@@ -1,5 +1,6 @@
-<form action="/signup" method="post">
+<form action="/auth" method="post">
     <h2>Sign Up</h2>
+
     <label for="">Name</label>
     <input type="text" name="firstName">
 
@@ -7,13 +8,14 @@
     <input type="text" name="lastName">
 
     <label for="">Gender</label>
+
     <input type="radio" id="male" name="male" value="male" checked>
     <label for="male">Male</label>
 
     <input type="radio" id="female" name="female" value="female">
     <label for="female">Female</label>
 
-    <label for="cars">Course</label>
+    <label for="course">Course</label>
 
     <select id="course">
         <option value="web">Web Developement</option>
@@ -21,9 +23,9 @@
         <option value="data">Data</option>
     </select>
 
-    <input type="text" name="course">
     <label for="">Username</label>
     <input type="text" name="username">
+
     <label for="">Password</label>
     <input type="password" name="password">
     <button>Sign Up</button>
