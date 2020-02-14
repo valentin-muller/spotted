@@ -2,6 +2,11 @@ const express = require("express");
 const loginRouter = express.Router();
 const User = require("../../models/User");
 const bcrypt = require("bcrypt");
+<<<<<<< HEAD
+// const saltRound = 10;
+// const zxcvbn = require('zxcvbn');
+=======
+>>>>>>> b32aa3d342b7ccd6699c2616a273310bbbf0659f
 
 loginRouter.get("/", (req, res) => {
   res.render("auth/login-form");

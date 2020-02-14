@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "bcrypt": "^3.0.8",
@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/valentin-muller/spotted/issues"
   },
-  "homepage": "https://github.com/valentin-muller/spotted#readme"
+  "homepage": "https://github.com/valentin-muller/spotted#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }

@@ -15,7 +15,11 @@ const app = express();
 const router = require("./routes/index");
 
 mongoose
+<<<<<<< HEAD
   .connect("mongodb://localhost/spotted", { useNewUrlParser: true })
+=======
+  .connect("mongodb://localhost/users", { useNewUrlParser: true })
+>>>>>>> aa94e71e1769781e395974af5dc14eabffdb90e9
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
@@ -64,8 +68,13 @@ app.use((req, res, next) => {
   next(err);
 });
 
+<<<<<<< HEAD
 app.listen(3000, () => {
   console.log("Server listening on port 3000");
 });
+=======
+// app.listen()
+
+>>>>>>> aa94e71e1769781e395974af5dc14eabffdb90e9
 
 module.exports = app;
