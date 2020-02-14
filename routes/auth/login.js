@@ -2,8 +2,6 @@ const express = require("express");
 const loginRouter = express.Router();
 const User = require("../../models/User");
 const bcrypt = require("bcrypt");
-// const zxcvbn = require('zxcvbn');
-// const saltRound = 10;
 
 loginRouter.get("/", (req, res) => {
   res.render("auth/login-form");
@@ -30,7 +28,7 @@ loginRouter.post("/", (req, res) => {
 
       if (correctPW) {
         req.session.current = user; // user logs in
-        res.redirect("NEWSFEED"); //redirects to NEWSFEED
+        res.redirect("/"); //redirects to NEWSFEED
       } else {
         res.render("auth/login-form", { errorMsg: "Wrong password" });
       }

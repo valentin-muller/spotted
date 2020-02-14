@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const messageSchema = new Schema({
   headerMessage: String,
-  mainMessage: String,
+  mainMessage: { type: String, required: true },
   isFavourite: Boolean,
   userID: Number
 });

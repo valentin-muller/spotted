@@ -3,7 +3,7 @@ const router = express.Router();
 
 //need to add profile/user, message routers
 
-//PRE ROUTE MIDDLEWARE - used to check if usear has autenticated cookie
+//PRE ROUTE MIDDLEWARE - used to check if user has an autenticated cookie
 
 router.use("/", (req, res) => {
   if (req.session.currentUser) {
