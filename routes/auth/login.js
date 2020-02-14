@@ -2,11 +2,7 @@ const express = require("express");
 const loginRouter = express.Router();
 const User = require("../../models/User");
 const bcrypt = require("bcrypt");
-<<<<<<< HEAD
-// const saltRound = 10;
-// const zxcvbn = require('zxcvbn');
-=======
->>>>>>> b32aa3d342b7ccd6699c2616a273310bbbf0659f
+
 
 loginRouter.get("/", (req, res) => {
   res.render("auth/login-form");
@@ -14,7 +10,13 @@ loginRouter.get("/", (req, res) => {
 });
 
 loginRouter.post("/", (req, res) => {
-  const { firstName, lastName, username, password, gender, course } = req.body;
+  console.log('HELLO');
+  const { username, password } = req.body;
+  console.log('USER', username);
+  console.log('PW', password);
+
+  
+  
   if (password === "" || username === "") {
     res.render("auth/login-form", { errorMsg: "Username/Password required" });
     // check for Username/PW , if blank send error
@@ -29,11 +31,15 @@ loginRouter.post("/", (req, res) => {
       }
 
       const databasePW = user.password;
+      console.log('DB PW',databasePW);
+      console.log('FORM PW',password);
+      
+      
       const correctPW = bcrypt.compareSync(password, databasePW); // compares the data to be encrypted to the data in the DB
-
+      
       if (correctPW) {
         req.session.current = user; // user logs in
-        res.redirect("/"); //redirects to NEWSFEED
+        res.render("index"); //redirects to NEWSFEED
       } else {
         res.render("auth/login-form", { errorMsg: "Wrong password" });
       }

@@ -7,7 +7,7 @@ const saltRounds = 10;
 
 authRouter.post("/", (req, res, next) => {
   const { firstName, lastName, username, password, gender, course } = req.body;
-  if (password === "" || username === "") {
+  if (firstName ==="" || password === "" || username === "") {
     // what happens if PW or username is blank?
     res.render("auth/signup-form", {
       errorMsg: "Make sure to enter a Username or a Password"
@@ -31,6 +31,7 @@ authRouter.post("/", (req, res, next) => {
         });
         return;
       }
+      
       const salt = bcrypt.genSaltSync(saltRounds);
       const hasedPW = bcrypt.hashSync(password, salt);
 

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<form action="/auth" method="post">
-=======
-<form action="/signup-form" method="post">
->>>>>>> aa94e71e1769781e395974af5dc14eabffdb90e9
+<form action="/signup" method="post">
     <h2>Sign Up</h2>
 
     <label for="">Name</label>
@@ -11,43 +7,31 @@
     <label for="">Last Name</label>
     <input type="text" name="lastName">
 
-<<<<<<< HEAD
     <label for="">Gender</label>
 
-    <input type="radio" id="male" name="male" value="male" checked>
-=======
-    {{!-- <label for="">Gender</label>
-    <input type="radio" id="male" name="male" value="male">
->>>>>>> aa94e71e1769781e395974af5dc14eabffdb90e9
+    <input type="radio" id="male" name="gender" value="male">
     <label for="male">Male</label>
 
-    <input type="radio" id="female" name="female" value="female">
-    <label for="female">Female</label> --}}
-{{!-- <label for="gender">Gender</label>
-
-<<<<<<< HEAD
-    <label for="course">Course</label>
-=======
-<select id="gender">
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-    <option value="Other">Other</option>
-</select>
->>>>>>> aa94e71e1769781e395974af5dc14eabffdb90e9
-
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
 
     <label for="course">Course</label>
-    <select id="course">
+
+    <select name='course' id="course">
         <option value="web">Web Developement</option>
         <option value="uxui">UX-UI</option>
         <option value="data">Data</option>
-    </select> --}}
-
+    </select>
 
     <label for="">Username</label>
     <input type="text" name="username">
 
     <label for="">Password</label>
     <input type="password" name="password">
-    <button type="submit">Sign Up</button>
+    <button>Sign Up</button>
 </form>
+
+
+{{#if errorMessage}}
+<p>{{errorMessage}}</p>
+{{/if}}
