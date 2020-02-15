@@ -31,71 +31,73 @@
     <button>Sign Up</button>
 </form> --}}
 
-
-<div class="signup-form">
-    <form action="/signup" method="post" class="form-horizontal">
-        <div class="col-xs-8 col-xs-offset-4">
-            <h2>Sign Up</h2>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-xs-4">Name</label>
-            <div class="col-xs-8">
-                <input type="text" class="form-control" name="firstName" required="required">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-xs-4">Last Name</label>
-            <div class="col-xs-8">
-                <input type="text" class="form-control" name="lastName" required="required">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-xs-4">Username</label>
-            <div class="col-xs-8">
-                <input type="text" class="form-control" name="username" required="required">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-xs-4">Password</label>
-            <div class="col-xs-8">
-                <input type="password" class="form-control" name="password" required="required">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-xs-8">
-                <label for="cars">Gender:</label>
-
-                <select name="gender" id="gender">
-                    <option value="male" selected>Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-xs-8">
-                <label for="course">Course:</label>
-
-                <select name='course'id="course">
-                    <option value="web" selected>Web-Dev</option>
-                    <option value="data">Data</option>
-                    <option value="UX">UX-UI</option>
-
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
+<div class="bg-container">
+    <div class="signup-form">
+        <form action="/signup" method="post" class="form-horizontal">
             <div class="col-xs-8 col-xs-offset-4">
-                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                <h2>Sign Up</h2>
             </div>
-        </div>
-    </form>
-    <div class="text-center bottom-msg">Already have an account? <a class='login-link' href="/login-form">Login here</a></div>
+            <div class="form-group">
+                <label class="control-label col-xs-4">Name</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" name="firstName" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-4">Last Name</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" name="lastName" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-4">Username</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" name="username" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-4">Password</label>
+                <div class="col-xs-8">
+                    <input type="password" class="form-control" name="password" required="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-8">
+                    <label for="cars">Gender:</label>
+
+                    <select name="gender" id="gender">
+                        <option value="male" selected>Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-8">
+                    <label for="course">Course:</label>
+
+                    <select class='selectbox' name='course' id="course">
+                        <option value="web" selected>Web-Dev</option>
+                        <option value="data">Data</option>
+                        <option value="UX">UX-UI</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-8 col-xs-offset-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                </div>
+            </div>
+        </form>
+        <div class="text-center bottom-msg">Already have an account? <a class='login-link' href="/login">Login
+                here</a></div>
+    </div>
+
+
+    {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+    {{/if}}
 </div>
-
-
-{{#if errorMessage}}
-<p>{{errorMessage}}</p>
-{{/if}}

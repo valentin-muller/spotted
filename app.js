@@ -9,14 +9,11 @@ const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-
 const app = express();
-
 const router = require("./routes/index");
-const privateRouter = require("./routes/private/private");
 
-
-mongoose.connect("mongodb://localhost/spotted", { useNewUrlParser: true })
+mongoose
+  .connect("mongodb://localhost/spotted", { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
@@ -57,17 +54,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.locals.title = "Express - Generated with IronGenerator";
 
 app.use("/", router);
-app.use("/", privateRouter);
-
 
 //Error handlers
-app.use((req, res, next) => {
-  const err = new Error("Not Found");
-  err.status = 404;
-  next(err);
-});
+// app.use((req, res, next) => {
+//   const err = new Error("Not Found");
+//   err.status = 404;
+//   next(err);
+// });
 
 // app.listen(process.env.PORT);
-  
 
 module.exports = app;

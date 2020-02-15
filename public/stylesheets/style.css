@@ -1,11 +1,16 @@
 /* html{
-  background-color: #2fc5fa;
+  background-color: #5C9EAD;
 } */
 
 body {
   color: rgb(0, 0, 0);
-  background-color: #2fc5fa;
+  background-color: #5c9ead;
   font-family: "Roboto", sans-serif;
+}
+
+.bg-container {
+  background-color: #5c9ead;
+  height: 100vh;
 }
 .form-control {
   border-color: #eee;
@@ -13,7 +18,7 @@ body {
   box-shadow: none !important;
 }
 .form-control:focus {
-  border-color: #2fc5fa;
+  border-color: #5c9ead;
 }
 .form-control,
 .btn {
@@ -29,7 +34,7 @@ body {
   margin: 0 0 30px 0;
   display: inline-block;
   padding: 0 30px 10px 0;
-  border-bottom: 3px solid #2fc5fa;
+  border-bottom: 3px solid #5c9ead;
 }
 .signup-form form {
   color: #999;
@@ -53,7 +58,7 @@ body {
 .signup-form .btn {
   font-size: 16px;
   font-weight: bold;
-  background: #2fc5fa;
+  background: #5c9ead;
   border: none;
   margin-top: 20px;
   min-width: 140px;
@@ -82,12 +87,65 @@ body {
   color: whitesmoke;
 }
 
-
-.bottom-msg{
+.bottom-msg {
   font-size: 0.7rem;
-color: #333;}
+  color: #333;
+}
 
+.bottom-msg a {
+  color: #ffffff;
+}
 
-.bottom-msg a{
-  color: #2196f3;
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #5c9ead;
+  height: 100vh;
+}
+
+.landing h1 {
+  color: #404040;
+  font-size: 10rem;
+}
+
+.landing h3 {
+  color: #404040;
+  font-size: 6rem;
+}
+
+.landing p {
+  color: #404040;
+  font-size: 2rem;
+}
+
+.example_e {
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 20px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
+
+.example_e:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.3s ease 0s;
+}
+
+select {
+  /* margin-bottom: 1em; */
+  padding: 0.25em;
+  border: 0;
+  border: 0.8px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0;
 }

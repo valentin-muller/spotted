@@ -5,13 +5,13 @@ const router = express.Router();
 const loginRouter = require("./auth/login");
 const logoutRouter = require("./auth/logout");
 const authRouter = require("./auth/auth");
+const messageRouter = require("./private/message");
 
 //AUTH
 router.use("/login", loginRouter);
 router.use("/logout", logoutRouter);
 router.use("/signup", authRouter);
-// router.use('/message', messageRouter)
-
+router.use("/messages", messageRouter);
 
 //GET home page
 router.get("/", (req, res) => {
