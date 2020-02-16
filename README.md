@@ -39,6 +39,8 @@ Upon login, the user will have access to a newsfeed, where he_she can access to 
 | `GET`      | `/profile/bookmarks`           | Private route. Render the `bookmarks` view.                  |                              |
 | `POST`     | `/profile/bookmarks/`          | Private route. Adds a new favourite ‘Gossip’ for the current user. |                              |
 | `DELETE`   | `/profile/bookmarks/:gossipId` | Private route. Deletes the existing bookmarked ‘Gossip’ from the current user. |                              |
+| `GET`      | `/newsfeed`                    | Renders all messages                                         |                              |
+| `POST`     | `/newsfeed`                    | Creates and adds a new message to the db                     |                              |
 
 ## Models
 
@@ -51,10 +53,10 @@ USER model
     password: String,
     sex = String,
     course = String,
-    favouritesArr = [],
-    gossipArr = [],
+    favouritesArr = [{  type: mongoose.Schema.Types.ObjectId, ref: "Message"}],
+    gossipArray = [{  type: mongoose.Schema.Types.ObjectId, ref: "Message"}],
     isAdmin = Boolean,
-    pendingGossip = [],
+    pendingGossip = [{  type: mongoose.Schema.Types.ObjectId, ref: "Message"}],
     
 
 }
@@ -71,8 +73,6 @@ MESSAGES model
   upvotes: Number,
   downvotes: Number,
   isFavourite: Boolean
-  pendingMessage = [],
-  approvesMessages = []
 }
 
 

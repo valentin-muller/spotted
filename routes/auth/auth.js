@@ -7,10 +7,10 @@ const saltRounds = 10;
 
 authRouter.post("/", (req, res, next) => {
   const { firstName, lastName, username, password, gender, course } = req.body;
-  if (firstName ==="" || password === "" || username === "") {
+  if (firstName === "" || lastName === "" || password === "" || username === "") {
     // what happens if PW or username is blank?
     res.render("auth/signup-form", {
-      errorMsg: "Make sure to enter a Username or a Password"
+      errorMsg: "Make sure you enter all required fields"
     });
     return;
   }
@@ -31,7 +31,7 @@ authRouter.post("/", (req, res, next) => {
         });
         return;
       }
-      
+
       const salt = bcrypt.genSaltSync(saltRounds);
       const hasedPW = bcrypt.hashSync(password, salt);
 
@@ -43,7 +43,10 @@ authRouter.post("/", (req, res, next) => {
         gender,
         course
       })
-        .then(createdUser => res.redirect("/"))
+        .then(createdUser => {
+          req.session.currentUser = createdUser;
+          res.redirect("private/create");
+        })
         .catch(err =>
           res.render("auth/signup-form", {
             errorMessage: "Error while creating new User"
