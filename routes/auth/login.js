@@ -35,16 +35,12 @@ loginRouter.post("/", (req, res) => {
 
       if (correctPW) {
         req.session.current = user; // user logs in
-        res.render("private/create");
-
-        // res.render("private/profile", {
-        //   user,
-        //   userInfo: req.session.currentUser
-        // });
-
-        console.log("User", user);
-
-        //redirects to NEWSFEED
+        res.render("private/user/profile", {
+          user,
+          userInfo: req.session.currentUser
+        }); //redirects to NEWSFEED
+        console.log('User', user);
+        
       } else {
         res.render("auth/login-form", { errorMsg: "Wrong password" });
       }

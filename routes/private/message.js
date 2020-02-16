@@ -42,7 +42,7 @@ messageRouter.post("/create", (req, res) => {
     headerMessage: req.body.headerMessage,
     mainMessage: req.body.mainMessage,
     // isFavourite: req.body.isFavourite,
-    author: req.session.currentUser._id
+    // author: req.session.currentUser._id
     // upvotes: req.body.upvotes,
     // downvotes: req.body.downvotes
   });

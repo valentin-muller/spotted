@@ -6,7 +6,7 @@ const messageSchema = new Schema({
   mainMessage: { type: String, required: true },
   // date: { type: Date },
   // isFavourite: { type: Boolean },
-  author: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
+  // author: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
   // upvotes: { type: Number },
   // downvotes: { type: Number }
 });
