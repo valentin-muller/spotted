@@ -43,7 +43,10 @@ authRouter.post("/", (req, res, next) => {
         gender,
         course
       })
-        .then(createdUser => res.redirect("/"))
+        .then(createdUser => {
+          req.session.currentUser = createdUser;
+          res.redirect("private/create");
+        })
         .catch(err =>
           res.render("auth/signup-form", {
             errorMessage: "Error while creating new User"

@@ -149,3 +149,79 @@ select {
   border: 0.8px solid rgba(0, 0, 0, 0.3);
   border-radius: 0;
 }
+
+.box-part {
+  /* border-radius: 3px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  padding: 60px 10px; */
+  color: #444444;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  background: whitesmoke;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.text {
+  margin: 20px 0px;
+}
+
+.fa {
+  color: #4183d7;
+}
+
+.profile-page {
+  text-transform: capitalize;
+  background-color: #5c9ead;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-gradient .header {
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+.form-gradient input[type="text"]:focus:not([readonly]) {
+  border-bottom: 1px solid #fd9267;
+  box-shadow: 0 1px 0 0 #fd9267;
+}
+.form-gradient input[type="text"]:focus:not([readonly]) + label {
+  color: #4f4f4f;
+}
+.form-gradient textarea.md-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #fd9267;
+  box-shadow: 0 1px 0 0 #fd9267;
+}
+.form-gradient .md-form textarea.md-textarea:focus:not([readonly]) + label {
+  color: #4f4f4f;
+}
+
+.form-dark .md-form label {
+  color: #fff;
+}
+.form-dark input[type="text"]:focus:not([readonly]) {
+  border-bottom: 1px solid #00c851;
+  -webkit-box-shadow: 0 1px 0 0 #00c851;
+  box-shadow: 0 1px 0 0 #00c851;
+}
+.form-dark input[type="text"]:focus:not([readonly]) + label {
+  color: #fff;
+}
+.form-dark textarea.md-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #00c851;
+  box-shadow: 0 1px 0 0 #00c851;
+  color: #fff;
+}
+.form-dark textarea.md-textarea {
+  color: #fff;
+}
+.form-dark .form-control,
+.form-dark .form-control:focus {
+  color: #fff;
+}
+.form-dark .md-form textarea.md-textarea:focus:not([readonly]) + label {
+  color: #fff;
+}
