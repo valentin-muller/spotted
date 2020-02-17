@@ -47,7 +47,8 @@ msgRouter.post("/create", (req, res) => {
         .then(data => console.log("User updated", data))
         .catch(err => console.log(err));
     })
-    .then(() => res.render("private/messages"))
+    // .then(() => res.render("private/newsfeed"))
+    .then(() => res.redirect("/newsfeed"))
     .catch(err => {
       console.log("Big error", err);
       res.render("private/create");

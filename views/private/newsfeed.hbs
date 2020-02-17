@@ -1,6 +1,7 @@
 <div class="newsfeed">
     <h1>NEWSFEED VIEW</h1>
-    <button><a href="messages/create"></a></button>
+
+    <button class="btn btn-dark"><a class='add-btn' href="/messages/create">+</a></button>
     {{#each messageArr}}
     <div class="card">
         <div class="card-body">
@@ -23,10 +24,6 @@
                 </div>
 
                 <div class="buttons">
-                    {{!-- <div class="button_cont" align="center"><a class="example_y" href="" target="_blank"
-                            rel="nofollow noopener">I agree</a></div>
-                    <div class="button_cont" align="center"><a class="example_y" href="" target="_blank"
-                            rel="nofollow noopener">I Disagree</a></div> --}}
                     <button class="btn btn-primary btn-sm">I agree</button>
                     <button class="btn btn-warning btn-sm">I don't agree</button>
                 </div>

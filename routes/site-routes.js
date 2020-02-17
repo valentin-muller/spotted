@@ -16,7 +16,7 @@ router.use("/", (req, res, next) => {
 // * '/profile'
 router.use("/profile", profileRouter);
 
-// * '/meal-events'
+// * '/messages'
 router.use("/messages", msgRouter);
 
 module.exports = router;

@@ -32,16 +32,8 @@ loginRouter.post("/", (req, res) => {
 
       if (correctPW) {
         req.session.currentUser = user; // user logs in
-        // res.render("private/create");
-
-        // res.render("private/create", {
-        //   user,
-        //   userInfo: req.session.currentUser
-        // });
 
         res.redirect("/messages");
-        // res.render("private/profile");
-        // res.render("private/profile");
 
         //redirects to NEWSFEED
       } else {
