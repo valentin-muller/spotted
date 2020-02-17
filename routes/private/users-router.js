@@ -19,7 +19,7 @@ router.get("/:id", (req, res, next) => {
     .then(user => {
       console.log(req.session.currentUser);
       req.session.current = user; // user logs in
-
+console.log("oneUser.messages :", user.messages);
       res.render("private/profile", {
         user,
         userInfo: req.session.currentUser
@@ -27,24 +27,6 @@ router.get("/:id", (req, res, next) => {
     })
     .catch(err => console.log(err));
 });
-
-
-
-// GET	/profile/:id --> Renders the profile page
-router.get("/:id", (req, res, next) => {
-  User.findById(req.params.id)
-  .then(oneUser => {
-//.populate('messages')
-     console.log(req.session.currentUser);
-     console.log(oneUser);
-    
-     res.render("user/profile", {
-       oneUser,
-       userInfo: req.session.currentUser // !!!!!!!!!!!
-     })
-
-  }).catch((err) => console.log(err));
-})
 
 
 // GET	/profile/:id/edit --> Renders the edit form to edit user profile

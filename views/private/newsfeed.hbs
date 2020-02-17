@@ -1,22 +1,35 @@
 <div class="newsfeed">
     <h1>NEWSFEED VIEW</h1>
+    <button><a href="messages/create"></a></button>
     {{#each messageArr}}
     <div class="card">
         <div class="card-body">
-            <h2>Anonymous just said...</h2>
+            <h2>Anonymous <span class="pink">Female</span> from <span class="green">Web Development</span> just said...
+            </h2>
 
-            {{#if author.gender = 'Male'}}
-            <h2>SSsSSs</h2>
-            {{/if}}
-
+            {{!-- <h2>{{#if author.gender == 'Male'}}
+                An anonymous Male
+                {{else}}
+                An anonymouse Female
+                {{/if}}</h2> --}}
             <h2 class="main-message">... {{this.mainMessage}}</h2>
 
+            <div class="comments">
+                <div class="emojis">
+                    <a href="">&#128512</a>
+                    <a href="">&#128514</a>
+                    <a href="">&#128526</a>
+                    <a href="">&#128530</a>
+                </div>
 
-            <div class="emojis">
-                <button> &#128512</button>
-                <button> &#128514</button>
-                <button> &#128526</button>
-                <button> &#128530</button>
+                <div class="buttons">
+                    {{!-- <div class="button_cont" align="center"><a class="example_y" href="" target="_blank"
+                            rel="nofollow noopener">I agree</a></div>
+                    <div class="button_cont" align="center"><a class="example_y" href="" target="_blank"
+                            rel="nofollow noopener">I Disagree</a></div> --}}
+                    <button class="btn btn-primary btn-sm">I agree</button>
+                    <button class="btn btn-warning btn-sm">I don't agree</button>
+                </div>
             </div>
 
 
@@ -24,4 +37,5 @@
     </div>
 
     {{/each}}
+
 </div>
