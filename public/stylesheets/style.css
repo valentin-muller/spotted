@@ -225,3 +225,23 @@ select {
 .form-dark .md-form textarea.md-textarea:focus:not([readonly]) + label {
   color: #fff;
 }
+
+.card {
+  margin: 20px;
+  text-align: center;
+  width: 60%;
+}
+
+.newsfeed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #5c9ead;
+  /* height: 100vh; */
+}
+
+.main-message {
+  font-size: 1.4rem;
+  text-transform: lowercase;
+}

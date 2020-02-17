@@ -1,10 +1,28 @@
-<h1>NEWSFEED VIEW</h1>
+<div class="newsfeed">
+    <h1>NEWSFEED VIEW</h1>
+    {{#each messageArr}}
+    <div class="card">
+        <div class="card-body">
+            <h2>Anonymous just said...</h2>
+
+            <h2>{{#if user.gender = 'male'}}
+                An anonymous Male
+                {{else}}
+                An anonymouse Female
+                {{/if}}</h2>
+            <h2 class="main-message">... {{this.mainMessage}}</h2>
 
 
-{{#each messageArr}}
-<h2>{{this.mainMessage}}</h2>
-<h3>Author: {{this.author.firstName}}</h3>
-<h3>{{this.author.lastName}}</h3>
-<br>
-<br>
-{{/each}}
+            <div class="emojis">
+                <button> &#128512</button>
+                <button> &#128514</button>
+                <button> &#128526</button>
+                <button> &#128530</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    {{/each}}
+</div>
