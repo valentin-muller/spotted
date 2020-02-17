@@ -15,13 +15,6 @@ authRouter.post("/", (req, res, next) => {
     return;
   }
 
-  //  if (zxcvbn(password).score < 3) {
-  // res.render("auth/signup-form", {
-  // errorMessage: "Password is weak . Try adding different characters type or making it longer"
-  // });
-  // return;
-  // }
-
   User.findOne({ username })
     .then(user => {
       if (user) {

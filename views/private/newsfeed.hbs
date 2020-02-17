@@ -1,0 +1,10 @@
+<h1>NEWSFEED VIEW</h1>
+
+
+{{#each messageArr}}
+<h2>{{this.mainMessage}}</h2>
+<h3>Author: {{this.author.firstName}}</h3>
+<h3>{{this.author.lastName}}</h3>
+<br>
+<br>
+{{/each}}

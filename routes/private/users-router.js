@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const User = require("./../../models/User");
-const Message = require("./../../models/Message");
+const User = require("../../models/User");
+const Message = require("../../models/Message");
 
 // GET	/profile --> Redirects to the profile page
 router.get("/", (req, res, next) => {

@@ -11,6 +11,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const app = express();
 const router = require("./routes/index");
+const siteRouter = require("./routes/site-routes");
 
 mongoose
   .connect("mongodb://localhost/spotted", { useNewUrlParser: true })
@@ -54,6 +55,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.locals.title = "Express - Generated with IronGenerator";
 
 app.use("/", router);
+app.use("/", siteRouter); // Protected / Private routes
 
 //Error handlers
 // app.use((req, res, next) => {

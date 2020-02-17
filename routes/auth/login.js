@@ -9,10 +9,7 @@ loginRouter.get("/", (req, res) => {
 });
 
 loginRouter.post("/", (req, res) => {
-  // console.log("HELLO");
   const { username, password } = req.body;
-  // console.log("USER", username);
-  // console.log("PW", password);
 
   if (password === "" || username === "") {
     res.render("auth/login-form", { errorMsg: "Username/Password required" });
@@ -34,15 +31,17 @@ loginRouter.post("/", (req, res) => {
       const correctPW = bcrypt.compareSync(password, databasePW); // compares the data to be encrypted to the data in the DB
 
       if (correctPW) {
-        req.session.current = user; // user logs in
-        res.render("private/create");
+        req.session.currentUser = user; // user logs in
+        // res.render("private/create");
 
-        // res.render("private/profile", {
+        // res.render("private/create", {
         //   user,
         //   userInfo: req.session.currentUser
         // });
 
-        console.log("User", user);
+        res.redirect("/messages");
+        // res.render("private/profile");
+        // res.render("private/profile");
 
         //redirects to NEWSFEED
       } else {

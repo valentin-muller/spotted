@@ -1,16 +1,22 @@
 const express = require("express");
 const router = express.Router();
 
-//need to add profile/user, message routers
-
+const profileRouter = require("./private/users-router");
+const msgRouter = require("./private/message-router");
 //PRE ROUTE MIDDLEWARE - used to check if user has an autenticated cookie
 
-router.use("/", (req, res) => {
+router.use("/", (req, res, next) => {
   if (req.session.currentUser) {
     next();
   } else {
     res.redirect("/login");
   }
 });
+
+// * '/profile'
+router.use("/profile", profileRouter);
+
+// * '/meal-events'
+router.use("/messages", msgRouter);
 
 module.exports = router;
