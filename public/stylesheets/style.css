@@ -1,11 +1,15 @@
 /* html{
   background-color: #5C9EAD;
 } */
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 
+* {
+  font-family: "Raleway", sans-serif;
+}
 body {
   color: rgb(0, 0, 0);
   background-color: #5c9ead;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins ", sans-serif;
 }
 
 .bg-container {
@@ -233,6 +237,7 @@ select {
 }
 
 .newsfeed {
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -244,4 +249,46 @@ select {
 .main-message {
   font-size: 1.4rem;
   text-transform: lowercase;
+}
+
+.emojis {
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pink {
+  color: salmon;
+}
+
+.green {
+  color: #00c851;
+}
+
+.example_y {
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 20px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
+
+.example_y:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.3s ease 0s;
 }
