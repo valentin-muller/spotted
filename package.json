@@ -21,6 +21,9 @@
     "morgan": "~1.9.1",
     "zxcvbn": "^4.4.2"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "description": "<br>",
   "main": "app.js",
   "repository": {
