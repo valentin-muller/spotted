@@ -62,7 +62,7 @@ messageRouter.post("/create", (req, res) => {
         .then(data => console.log("User updated", data))
         .catch(err => console.log(err));
     })
-    .then(() => res.redirect("/message"))
+    .then(() => res.render("/message"))
     .catch(err => {
       console.log(err);
       res.render("private/create");
