@@ -59,6 +59,23 @@
                     <button class="btn btn-primary btn-sm">I agree</button>
                     <button class="btn btn-warning btn-sm">I don't agree</button>
                 </div>
+
+                <div>
+                    
+                    <form class="" action="/messages/fav?_id={{this._id}}" method="POST">
+                        <input type="text" value='{{this._id}}' style="display:none">
+                            <button id="fav-btn" type="submit">
+                                
+                                
+                                {{!-- {{#if this.favStatus}}
+                                <img src="" alt="">
+                                {{else}}
+                                <img src="" alt="">
+                                {{/if}} --}}
+
+                            </button>
+
+                </div>
             </div>
 
 

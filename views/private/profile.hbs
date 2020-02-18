@@ -29,6 +29,10 @@
                 </div>
             </div>
             <hr>
+
+
+
+<section class=''>
             <div class='personal-posts'>
                 <h2>What you posted</h2>
                 <br>
@@ -39,7 +43,22 @@
                 </div>
                 {{/each}}
             </div>
+</secion>
 
+<section class=''>
+            <div class='personal-posts'>
+                <h2>Your Favourites</h2>
+                <br>
+                {{#each user.favourites}}
+                <div class = "my-post-card">
+                    <h3>{{this.mainMessage}}</h3>
+                    <p>Date: </p>
+                </div>
+                {{/each}}              
+            </div>
+
+</section>
+<a href="/profile/edit">Edit profile</a>
 
         </div>
     </div>
