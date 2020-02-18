@@ -1,10 +1,9 @@
-<div>
-    <div class="create-text-area">
-        <h2>Message</h2>
-        <form action='/messages/create' method='POST'>
+<div id="create-text-area">
 
-            <textarea name="mainMessage" id="" cols="130" rows="10"></textarea>
-            <button type='submit' class="btn btn-primary text-center">Submit</button>
-        </form>
-    </div>
+    <form id="my-form" action='/messages/create' method='POST'>
+        <h2>Enter your message....</h2>
+        <p>We want to remember you to be respectful towards other.</p>
+        <textarea placeholder='Enter your message' name="mainMessage" maxlength='80' cols="100" rows="10"></textarea>
+    </form>
+    <button type='submit' class="btn btn-primary text-center msg-button" form="my-form">Submit</button>
 </div>

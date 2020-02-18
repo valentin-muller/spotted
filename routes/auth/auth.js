@@ -38,7 +38,7 @@ authRouter.post("/", (req, res, next) => {
       })
         .then(createdUser => {
           req.session.currentUser = createdUser;
-          res.redirect("private/create");
+          res.redirect("/messages");
         })
         .catch(err =>
           res.render("auth/signup-form", {

@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
@@ -13,8 +11,12 @@ const app = express();
 const router = require("./routes/index");
 const siteRouter = require("./routes/site-routes");
 
+require("dotenv").config();
+
 mongoose
-  .connect( process.env.MONGODB_URI, { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+
+  // .connect("mongodb://localhost/spotted", { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
@@ -33,7 +35,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET ,
+    // secret: "basic-auth-secret",
+    secret: process.env.SESSION_SECRET,
     // cookie: { maxAge: 3600000 * 1 },	// 1 hour
     resave: true,
     saveUninitialized: false,
