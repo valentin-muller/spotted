@@ -16,9 +16,9 @@ router.get("/:id", (req, res, next) => {
   User.findById(req.params.id)
     .populate("messages")
     .then(user => {
-      console.log(req.session.currentUser);
+      // console.log(req.session.currentUser);
       req.session.current = user; // user logs in
-      console.log("oneUser.messages :", user.messages);
+      // console.log("oneUser.messages :", user.messages);
       res.render("private/profile", {
         user,
         userInfo: req.session.currentUser

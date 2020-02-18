@@ -21,31 +21,6 @@ body {
   color: #ffffff;
 }
 
-.landing {
-  font-size: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #119da4;
-  height: 100vh;
-}
-
-.landing h1 {
-  color: #404040;
-  font-size: 10rem;
-}
-
-.landing h3 {
-  color: #404040;
-  font-size: 6rem;
-}
-
-.landing p {
-  color: #404040;
-  font-size: 2rem;
-}
-
 .example_e {
   border: none;
   background: #404040;
@@ -228,6 +203,32 @@ nav {
   color: #11595c;
 }
 /* LANDING PAGE */
+
+.landing {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #119da4;
+  height: 100vh;
+}
+
+.landing h1 {
+  color: #404040;
+  font-size: 10rem;
+}
+
+.landing h3 {
+  color: #404040;
+  font-size: 6rem;
+}
+
+.landing p {
+  color: #404040;
+  font-size: 2rem;
+}
+
 /* SIGNUP */
 .bg-container {
   background-color: #119da4;

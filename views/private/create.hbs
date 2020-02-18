@@ -1,9 +1,33 @@
-<div id="create-text-area">
+{{!-- NAVBAR --}}
+<div class="container">
+    <div class="row">
 
-    <form id="my-form" action='/messages/create' method='POST'>
-        <h2>Enter your message....</h2>
-        <p>We want to remember you to be respectful towards other.</p>
-        <textarea placeholder='Enter your message' name="mainMessage" maxlength='80' cols="100" rows="10"></textarea>
-    </form>
-    <button type='submit' class="btn btn-primary text-center msg-button" form="my-form">Submit</button>
+        <div class="col col-xs-4">
+            <a class="nav-link" href="/messages"><i class="fa fa-comments"></i></a>
+        </div>
+        <div class="col col-xs-4">
+            <a class="nav-link" href="/profile"><i class="fa fa-user"></i></a>
+        </div>
+        <div class="col col-xs-4">
+            <a class="nav-link" href="/"><i class="fa fa-star "></i></a>
+        </div>
+    </div>
+</div>
+
+{{!-- TEXT AREA --}}
+
+<div class="container-messages">
+    <div class="row">
+        <div class="col col-xs-10">
+            <div id="create-text-area">
+                <form id="my-form" action='/messages/create' method='POST'>
+                    <h2>Enter your message</h2>
+                    <p>We want to remember you to be respectful towards other.</p>
+                    <textarea placeholder='Enter your message' name="mainMessage" maxlength='80' cols="45"
+                        rows="15"></textarea>
+                    <button type='submit' class="btn btn-primary text-center msg-button" form="my-form">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
