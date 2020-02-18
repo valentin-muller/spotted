@@ -1,15 +1,18 @@
 <div class="profile-page">
+
+
+    {{!-- NAVBAR --}}
+
     <div class="container">
         <div class="row">
-
             <div class="col col-xs-4">
-                <a class="nav-link" href="/profile"><i class="fa fa-user"></i></a>
+                <a class="nav-link" href="/messages"><i class="fa fa-comments"></i></a>
             </div>
             <div class="col col-xs-4">
                 <a class="nav-link" href="/messages/create"><i class="fa fa-plus"></i></a>
             </div>
             <div class="col col-xs-4">
-                <a class="nav-link" href="#"><i class="fa fa-power-off"></i></a>
+                <a class="nav-link" href="/logout"><i class="fa fa-power-off"></i></a>
             </div>
         </div>
     </div>
@@ -17,48 +20,63 @@
 
         <div class="box-part text-center">
 
-            <div class="profile-info">
-                <div class="title">
-                    <h2>Name: {{user.firstName}} </h2>
-                    <h2>Last Name: {{user.lastName}}</h2>
-                </div>
+            {{!-- PROFILE CARD --}}
 
-                <div class="text">
-                    <h4>Gender: {{user.gender}}</h4>
-                    <h4>Course: {{user.course}}</h4>
+
+
+            <div class="card each-message">
+                <div class="card-body">
+
+
+                    <div class="title">
+                        <h4>Name: {{user.firstName}} </h4>
+                        <h4>Last Name: {{user.lastName}}</h4>
+                    </div>
+
+                    <div class="text">
+                        <h4>Gender: {{user.gender}}</h4>
+                        <h4>Course: {{user.course}}</h4>
+                    </div>
+
                 </div>
             </div>
+
+
+
+            {{!-- MY POSTS --}}
+
+
             <hr>
+            <h2>What you posted</h2>
+            <br>
+            {{#each user.messages}}
+            <div class="card each-message">
+                <div class="card-body">
+                    {{!-- <p class="card-title"></span> just
+                        said...</p> --}}
 
+                    <h5 class="card-text"> {{this.mainMessage}}</h5>
 
-
-<section class=''>
-            <div class='personal-posts'>
-                <h2>What you posted</h2>
-                <br>
-                {{#each user.messages}}
-                <div class="my-post-card">
-                    <h3>{{this.mainMessage}}</h3>
-                    <p>Date: </p>
                 </div>
-                {{/each}}
-            </div>
-</secion>
-
-<section class=''>
-            <div class='personal-posts'>
-                <h2>Your Favourites</h2>
-                <br>
-                {{#each user.favourites}}
-                <div class = "my-post-card">
-                    <h3>{{this.mainMessage}}</h3>
-                    <p>Date: </p>
-                </div>
-                {{/each}}              
             </div>
 
-</section>
-<a href="/profile/edit">Edit profile</a>
+            {{/each}}
+
+            <hr>
+            <h2>What you liked</h2>
+            <br>
+            {{#each user.favourites}}
+            <div class="card each-message">
+                <div class="card-body">
+                    {{!-- <p class="card-title"></span> just
+                        said...</p> --}}
+
+                    <h5 class="card-text"> {{this.mainMessage}}</h5>
+
+                </div>
+            </div>
+
+            {{/each}}
 
         </div>
     </div>

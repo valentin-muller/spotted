@@ -1,27 +1,8 @@
 <div class="newsfeed">
-    {{!-- <h1>NEWSFEED VIEW</h1> --}}
-    {{!-- <nav class="navbar navbar-expand-lg sticky-top">
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="fa fa-power-off"></i></a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="fa fa-plus"></i></a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="fa fa-user"></i></a>
-                </li>
 
-            </ul>
-        </div>
-    </nav> --}}
-    <div class="container">
+    {{!-- NAVBAR --}}
+    <div class="container ">
         <div class="row">
 
             <div class="col col-xs-4">
@@ -31,30 +12,34 @@
                 <a class="nav-link" href="/messages/create"><i class="fa fa-plus"></i></a>
             </div>
             <div class="col col-xs-4">
-                <a class="nav-link" href="#"><i class="fa fa-power-off"></i></a>
+                <a class="nav-link" href="/logout"><i class="fa fa-star "></i></a>
+
             </div>
         </div>
     </div>
 
-    {{!-- <button class="btn btn-dark"><a class='add-btn' href="/messages/create">+</a></button> --}}
-    {{#each messageArr}}
+
+
+    {{!-- MESSAGES --}}
+    {{!-- {{#each messageArr}}
     <div class="card">
         <div class="card-body">
             <h2>Anonymous <span class=>{{author.gender}}</span> from <span class="green">{{author.course}}</span> just
                 said...
             </h2>
 
-
             <p class="main-message">... {{this.mainMessage}}</p>
 
-            <div class="comments">
-                <div class="emojis">
-                    <a href="">&#128512</a>
-                    <a href="">&#128514</a>
-                    <a href="">&#128526</a>
-                    <a href="">&#128530</a>
-                </div>
+            <div class="emojis">
+                <a href="">&#128512</a>
+                <a href="">&#128514</a>
+                <a href="">&#128526</a>
+                <a href="">&#128530</a>
+            </div>
 
+            <div class="buttons">
+                <button class="btn btn-primary btn-sm">I agree</button>
+                <button class="btn btn-warning btn-sm">I don't agree</button>
                 <div class="buttons">
                     <button class="btn btn-primary btn-sm">I agree</button>
                     <button class="btn btn-warning btn-sm">I don't agree</button>
@@ -72,7 +57,7 @@
                                 {{else}}
                                 <img src="" alt="">
                                 {{/if}} --}}
-
+    {{!-- 
                             </button>
 
                 </div>
@@ -80,8 +65,49 @@
 
 
         </div>
-    </div>
+    </div> --}}
 
+
+    {{#each messageArr}}
+    <div class="card each-message">
+        <div class="card-body">
+            <p class="card-title">Anonymous <span class=>{{author.gender}}</span> from <span
+                    class="green">{{author.course}}</span> just
+                said...</p>
+
+            <h5 class="card-text">... {{this.mainMessage}}</h5>
+
+            <hr>
+
+            <div class="buttons">
+                <div class="emojiis">
+                    {{!-- <button class="btn btn-primary btn-sm">I agree</button> --}}
+                    {{!-- <button class="btn btn-warning btn-sm">I don't agree</button> --}}
+                    <button><a href="">&#128512</a></button><span>{{counter}}</span>
+                    <button><a href="">&#128514</a></button><span>{{counter}}</span>
+                    <button><a href="">&#128526</a></button><span>{{counter}}</span>
+                    <button><a href="">&#128530</a></button><span>{{counter}}</span>
+                </div>
+
+
+                <form class="" action="/messages/fav?_id={{this._id}}" method="POST">
+                    <input type="text" value='{{this._id}}' style="display:none">
+                    <button id="fav-btn" type="submit"><i class="fa fa-star "></i></button>
+                </form>
+
+
+                {{!-- <div class="favstar">
+                    <i class="fa fa-star "></i>
+                </div> --}}
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
     {{/each}}
 
 </div>

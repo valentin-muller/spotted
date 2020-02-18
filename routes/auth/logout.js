@@ -8,7 +8,7 @@ logoutRouter.get("/", (req, res, next) => {
       if (err) {
         return next(err);
       } else {
-        return res.render("./login");
+        return res.redirect("/login");
       }
     });
   }

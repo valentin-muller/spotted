@@ -1,4 +1,4 @@
-<div class="bg-container">
+{{!-- <div class="form-container">
     <div class="signup-form">
         <form action="/signup" method="post" class="form-horizontal">
             <div class="col-xs-8 col-xs-offset-4">
@@ -67,4 +67,48 @@
     {{#if errorMessage}}
     <p>{{errorMessage}}</p>
     {{/if}}
+</div> --}}
+
+<div class="logo-container">
+    <img src="/images/logo.png" alt="app-logo" class="app-logo">
 </div>
+<main>
+    <form action='/signup' method='POST' class="form form--signup" enctype="multipart/form-data">
+
+        {{!-- <label for=''>Password</label> --}}
+        <input type='text' name='firstName' placeholder="First Name">
+
+        {{!-- <label for=''>Password</label> --}}
+        <input type='text' name='lastName' placeholder="Last Name">
+
+        {{!-- <label for=''>Username</label> --}}
+        <input type='text' name='username' placeholder="Username">
+
+        {{!-- <label for=''>Password</label> --}}
+        <input type='password' name='password' placeholder="Password">
+
+
+        <select id="gender">
+            <option value="Male" selected>Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <select name='course' id="course">
+            <option value="Web" selected>Web-Dev</option>
+            <option value="Data">Data</option>
+            <option value="UX-UI">UX-UI</option>
+        </select>
+
+        <button type='submit'>START GOSSIPING</button>
+    </form>
+
+    <div class="form-link">
+        <span>Already a member? </span>
+        <a href="/login">Login</a>
+    </div>
+
+    {{#if errorMessage}}
+    <div class="err-message">{{errorMessage}}</div>
+    {{/if}}
+</main>

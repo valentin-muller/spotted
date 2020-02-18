@@ -9,6 +9,7 @@ msgRouter.get("/", (req, res) => {
   Message.find()
     .populate("author")
     .then(messageArr => {
+      messageArr.reverse();
       res.render("private/newsfeed", {
         messageArr
       });
