@@ -57,4 +57,73 @@ msgRouter.post("/create", (req, res) => {
     });
 });
 
+
+
+// FAVOURITES
+
+msgRouter.post('/fav', (req, res, next) => {
+
+  const userId = req.session.currentUser._id;
+  const {_id} = req.query;
+
+  let indexOfPostsId;  
+  
+  
+  User.findOne({ _id: userId})
+    .then(user => {
+      //get array of favourite posts
+
+      const favArr = user.favourites;
+      let isInFav = false;
+
+      favArr.forEach((favId, i) => {
+        if(favId == _id) {
+          isInFav = true;
+          indexOfPostsId = i;
+          return;
+        }
+      });
+      //remove post favs
+      if (isInFav) {
+        favArr.splice(indexOfPostsId, 1);
+      } else {
+        favArr.push(_id);
+      }
+
+
+
+
+
+
+  User.updateOne({_id: userId}, {favourites: favArr})
+      .then(post => {
+        if(isInFav) {
+            res.status(200).send({statusText: 'removed from fav'})
+        } else {
+            res.status(200).send({statusText: 'add to fav'})
+        }
+      })
+      .catch(err => {
+            res.status(400).send(err)
+      });
+    })
+  .catch(err => console.log(err));
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = msgRouter;

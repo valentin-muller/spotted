@@ -62,6 +62,22 @@
 
             {{/each}}
 
+            <hr>
+            <h2>What you liked</h2>
+            <br>
+            {{#each user.favourites}}
+            <div class="card each-message">
+                <div class="card-body">
+                    {{!-- <p class="card-title"></span> just
+                        said...</p> --}}
+
+                    <h5 class="card-text"> {{this.mainMessage}}</h5>
+
+                </div>
+            </div>
+
+            {{/each}}
+
         </div>
     </div>
 </div>

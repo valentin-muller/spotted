@@ -274,3 +274,8 @@ select {
 .logo-container img {
   width: 250px;
 }
+
+#fav-btn {
+  background-color: transparent;
+  width: 20px;
+}
