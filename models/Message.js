@@ -6,8 +6,12 @@ const messageSchema = new Schema({
   date: { type: Date },
   isFavourite: { type: Boolean },
   author: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-  upvotes: { type: Number },
-  downvotes: { type: Number }
+  agree: { type: Number },
+  disagree: { type: Number },
+  smiley: { type: Number },
+  crying: { type: Number },
+  glasses: { type: Number },
+  sad: { type: Number }
 });
 
 const Message = mongoose.model("Message", messageSchema);

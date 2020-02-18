@@ -5,92 +5,16 @@
 }
 body {
   color: rgb(0, 0, 0);
-  background-color: #5c9ead;
+  background-color: #119da4;
   font-family: "Poppins ", sans-serif;
 }
 
-.bg-container {
-  background-color: #5c9ead;
-  height: 100vh;
-}
-.form-control {
-  border-color: #eee;
-  min-height: 41px;
-  box-shadow: none !important;
-}
-.form-control:focus {
-  border-color: #5c9ead;
-}
-.form-control,
-.btn {
-  border-radius: 3px;
-}
-.signup-form {
-  width: 500px;
-  margin: 0 auto;
-  padding: 30px 0;
-}
-.signup-form h2 {
-  color: #333;
-  margin: 0 0 30px 0;
-  display: inline-block;
-  padding: 0 30px 10px 0;
-  border-bottom: 3px solid #5c9ead;
-}
-.signup-form form {
-  color: #999;
-  border-radius: 3px;
-  margin-bottom: 15px;
-  background: whitesmoke;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  padding: 30px;
-}
-.signup-form .form-group {
-  margin-bottom: 20px;
-}
-.signup-form label {
-  font-weight: 700;
-  font-size: 13px;
-  color: black;
-}
-.signup-form input[type="checkbox"] {
-  margin-top: 2px;
-}
-.signup-form .btn {
-  font-size: 16px;
-  font-weight: bold;
-  background: #5c9ead;
-  border: none;
-  margin-top: 20px;
-  min-width: 140px;
-}
-.signup-form .btn:hover,
-.signup-form .btn:focus {
-  background: #41cba9;
-  outline: none !important;
-}
-.signup-form a {
-  color: whitesmoke;
-  text-decoration: underline;
-}
-.signup-form a:hover {
-  text-decoration: none;
-}
-.signup-form form a {
-  color: whitesmoke;
-  text-decoration: none;
-}
-.signup-form form a:hover {
-  text-decoration: underline;
-}
-
 .bottom-msg {
-  color: whitesmoke;
+  /* color: whitesmoke; */
 }
 
 .bottom-msg {
   font-size: 0.7rem;
-  color: #333;
 }
 
 .bottom-msg a {
@@ -98,11 +22,12 @@ body {
 }
 
 .landing {
+  font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #5c9ead;
+  background-color: #119da4;
   height: 100vh;
 }
 
@@ -154,8 +79,6 @@ select {
   color: #444444;
   border-radius: 3px;
   margin-bottom: 15px;
-  background: #5c9ead;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   padding: 30px;
 }
 
@@ -168,15 +91,15 @@ select {
 }
 
 .profile-page {
-  text-transform: capitalize;
-  background-color: #5c9ead;
+  background-color: #119da4;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
 }
 
-.form-gradient .header {
+/* .form-gradient .header {
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
 }
@@ -220,30 +143,36 @@ select {
 }
 .form-dark .md-form textarea.md-textarea:focus:not([readonly]) + label {
   color: #fff;
-}
+} */
 
 .card {
-  margin: 20px;
+  margin: 15px;
   text-align: center;
-  width: 60%;
+  width: 40%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .newsfeed {
-  padding: 10px;
+  padding: 0 0 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #5c9ead;
+  background-color: #119da4;
+}
+
+.newsfeed h2 {
+  font-size: 1rem;
 }
 
 .main-message {
-  font-size: 1.4rem;
+  font-size: 2rem;
   text-transform: lowercase;
 }
 
 .emojis {
-  font-size: 2rem;
+  font-size: 1rem;
   padding: 10px;
 }
 
@@ -263,19 +192,179 @@ select {
 }
 
 .add-btn {
-  font-size: 3rem;
+  font-size: 1rem;
   height: 10px;
+  width: 50px;
 }
 
-.create-text-area {
+#create-text-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background: #333;
-  background-color: #5c9ead;
+  background-color: #119da4;
   height: 100vh;
 }
 
+.btn {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+nav {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+}
+
+.fa {
+  font-size: 2rem;
+  color: whitesmoke;
+}
+
+.fa:hover {
+  color: #11595c;
+}
 /* LANDING PAGE */
 /* SIGNUP */
+.bg-container {
+  background-color: #119da4;
+  height: 100vh;
+}
+.form-control {
+  border-color: #eee;
+  min-height: 41px;
+  box-shadow: none !important;
+}
+.form-control:focus {
+  border-color: #119da4;
+}
+.form-control,
+.btn {
+  border-radius: 3px;
+}
+.signup-form {
+  width: 500px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.signup-form h2 {
+  color: #333;
+  margin: 0 0 30px 0;
+  display: inline-block;
+  padding: 0 30px 10px 0;
+  border-bottom: 3px solid #119da4;
+}
+.signup-form form {
+  color: #999;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  background: whitesmoke;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+.signup-form .form-group {
+  margin-bottom: 20px;
+}
+.signup-form label {
+  font-weight: 700;
+  font-size: 13px;
+  color: black;
+}
+.signup-form input[type="checkbox"] {
+  margin-top: 2px;
+}
+.signup-form .btn {
+  font-size: 16px;
+  font-weight: bold;
+  background: #119da4;
+  border: none;
+  margin-top: 20px;
+  min-width: 140px;
+}
+.signup-form .btn:hover,
+.signup-form .btn:focus {
+  background: #41cba9;
+  outline: none !important;
+}
+.signup-form a {
+  color: whitesmoke;
+  text-decoration: underline;
+}
+.signup-form a:hover {
+  text-decoration: none;
+}
+.signup-form form a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+.signup-form form a:hover {
+  text-decoration: underline;
+}
 /* LOGIN */
 /* NEWSFEED */
 /* PROFILE */
 /* CREATE */
+
+/* .my-post-card {
+  margin: 15px;
+  text-align: center;
+  width: 40%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+} */
+
+.msg-button {
+  margin-top: 10px;
+}
+
+.row {
+  padding: 1%;
+  text-align: center;
+}
+
+.profile-info {
+  text-transform: capitalize;
+  background-color: whitesmoke;
+  margin-top: 10px;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.personal-posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal-posts h2 {
+  text-transform: uppercase;
+}
+
+.my-post-card {
+  background-color: whitesmoke;
+  margin: 15px;
+  text-align: center;
+  width: 70%;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); */
+  padding: 20px;
+}
+
+/* .my-post-card:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: red;
+} */
+
+.my-post-card h3 {
+  font-size: 1rem;
+}
+
+.my-post-card p {
+  font-size: 10px;
+  font-weight: 700;
+}
