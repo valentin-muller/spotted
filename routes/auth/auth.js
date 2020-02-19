@@ -6,9 +6,9 @@ const zxcvbn = require("zxcvbn");
 const saltRounds = 10;
 
 authRouter.post("/", (req, res, next) => {
+  console.log('req.body :', req.body);
   const { firstName, lastName, username, password, gender, course } = req.body;
   if (firstName === "" || lastName === "" || password === "" || username === "") {
-    // what happens if PW or username is blank?
     res.render("auth/signup-form", {
       errorMsg: "Make sure you enter all required fields"
     });

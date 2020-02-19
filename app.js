@@ -10,6 +10,7 @@ const MongoStore = require("connect-mongo")(session);
 const app = express();
 const router = require("./routes/index");
 const siteRouter = require("./routes/site-routes");
+const registerHelpers = require("./loaders/hbs");
 
 require("dotenv").config();
 
@@ -53,6 +54,7 @@ app.use(cookieParser());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
+registerHelpers(hbs);
 
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";

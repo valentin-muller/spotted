@@ -12,9 +12,8 @@ const userSchema = new Schema({
     required: true,
     enum: ["Web", "UX-UI", "Data"]
   },
-  favourites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Message"}],
+  favourites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Message" }],
   messages: [{ type: mongoose.Schema.Types.ObjectId, ref: "Message" }]
-  // isAdmin: { type: Boolean, required: true, default: false }
 });
 
 const User = mongoose.model("User", userSchema);

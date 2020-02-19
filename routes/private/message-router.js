@@ -9,10 +9,26 @@ msgRouter.get("/", (req, res) => {
   Message.find()
     .populate("author")
     .then(messageArr => {
-      messageArr.reverse();
-      res.render("private/newsfeed", {
-        messageArr
+      messageArr.reverse().map(message => {
+        message.isFavourite = false;
+        console.log("message", message);
       });
+
+      User.findById(req.session.currentUser._id)
+        .then(user => {
+          user.favourites.forEach(messageId => {
+            messageArr.forEach(message => {
+              if (messageId.toString() === message._id.toString()) {
+                message.isFavourite = true;
+                return;
+              }
+            });
+          });
+          res.render("private/newsfeed", {
+            messageArr
+          });
+        })
+        .catch(err => console.log(err));
     })
     .catch(err => {
       console.log(err);
@@ -57,32 +73,28 @@ msgRouter.post("/create", (req, res) => {
     });
 });
 
-
-
 // FAVOURITES
 
-msgRouter.post('/fav', (req, res, next) => {
-
+msgRouter.get("/fav", (req, res, next) => {
   const userId = req.session.currentUser._id;
-  const {_id} = req.query;
+  const { _id } = req.query;
 
-  let indexOfPostsId;  
-  
-  
-  User.findOne({ _id: userId})
+  let indexOfPostsId;
+
+  User.findOne({ _id: userId })
     .then(user => {
       //get array of favourite posts
 
       const favArr = user.favourites;
       let isInFav = false;
-
       favArr.forEach((favId, i) => {
-        if(favId == _id) {
+        if (favId == _id) {
           isInFav = true;
           indexOfPostsId = i;
           return;
         }
       });
+
       //remove post favs
       if (isInFav) {
         favArr.splice(indexOfPostsId, 1);
@@ -90,40 +102,19 @@ msgRouter.post('/fav', (req, res, next) => {
         favArr.push(_id);
       }
 
-
-
-
-
-
-  User.updateOne({_id: userId}, {favourites: favArr})
-      .then(post => {
-        if(isInFav) {
-            res.status(200).send({statusText: 'removed from fav'})
-        } else {
-            res.status(200).send({statusText: 'add to fav'})
-        }
-      })
-      .catch(err => {
-            res.status(400).send(err)
-      });
+      User.updateOne({ _id: userId }, { favourites: favArr })
+        .then(user => {
+          if (isInFav) {
+            res.status(200).send({ statusText: "fav" });
+          } else {
+            res.status(200).send({ statusText: "unfav" });
+          }
+        })
+        .catch(err => {
+          res.status(400).send(err);
+        });
     })
-  .catch(err => console.log(err));
-
-
+    .catch(err => console.log(err));
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = msgRouter;

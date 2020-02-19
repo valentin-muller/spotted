@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 
 loginRouter.get("/", (req, res) => {
   res.render("auth/login-form");
-  //render the login-form hbs page
 });
 
 loginRouter.post("/", (req, res) => {

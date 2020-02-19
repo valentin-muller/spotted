@@ -1,36 +1,35 @@
 <form action="/profile/edit" method="post" class="delete-profile">
 
-<label for=''>Firstname</label>
-<input type='text' name='firstName' value="{{user.firstName}}">
+    <label for=''>Firstname</label>
+    <input type='text' name='firstName' value="{{user.firstName}}">
 
-<label for=''>Lastname</label>
-<input type='text' name='lastName' value="{{user.lastName}}">
+    <label for=''>Lastname</label>
+    <input type='text' name='lastName' value="{{user.lastName}}">
 
-<label for=''>Username</label>
-<input type='text' name='username' value="{{user.username}}">
+    <label for=''>Username</label>
+    <input type='text' name='username' value="{{user.username}}">
 
-<label for=''>Password</label>
-<input type='password' name='password' value="{{user.password}}">
+    <label for=''>Password</label>
+    <input type='password' name='password' value="{{user.password}}">
 
-<label for=''>Gender</label>
-<select name="gender" id="" value="{{user.gender}}">
-    <option value="Male" selected>Male</option>
-    <option value="Female">Female</option>
-    <option value="Other">Other</option>
+    <label for=''>Gender</label>
+    <select name="gender" id="" value="{{user.gender}}">
+        <option value="Male" selected>Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
 
-</select>
+    </select>
 
-<label for=''>Course</label>
-<select name="course" id="" value="{{user.course}}">
-    <option value="Web" selected>Web-Dev</option>
-    <option value="UX-UI">UX-UI</option>
-    <option value="Data">Data</option>
-</select>
+    <label for='course'>Course</label>
+    <select name="course" id="" value="{{user.course}}">
+        <option value="Web" selected>Web-Dev</option>
+        <option value="UX-UI">UX-UI</option>
+        <option value="Data">Data</option>
+    </select>
 
+    <button type='submit'>Edit profile</button>
 
-
-
-<button type='submit'>Edit profile</button>
 </form>
-    
-    <button><a href="/profile/delete/{{user._id}}">Delete profile</a></button>
+
+
+<button><a href="/profile/delete/{{user._id}}">Delete profile</a></button>

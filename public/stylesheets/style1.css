@@ -13,6 +13,8 @@ body {
 
 .row {
   text-align: center;
+  padding-top: 10px;
+  margin-bottom: 40px;
 }
 
 .fa {
@@ -24,6 +26,25 @@ body {
   color: #11595c;
 }
 
+form button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #e10100ad;
+  color: #f3f3f3;
+  font-weight: bold;
+  top: 0;
+  padding-left: 20px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
 /* LOGIN/SIGNUP */
 
 .form-container {
@@ -110,22 +131,51 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.emojiis a {
-  cursor: hand;
-  padding: 0 10px;
+#card-body {
+  display: flex;
+  align-items: flex-start;
+  padding: 1 1.25rem 0 1.25rem;
 }
+
+.datebody {
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  height: 10px;
+}
+.card-text {
+  width: 65%;
+}
+
+.fav-form {
+  top: 0;
+}
+
+.emojiis {
+  padding: 0 5px 10px 5px;
+}
+
+.emojiis a {
+  font-size: 1.3rem;
+  cursor: hand;
+  padding: 0 8px;
+}
+
 .buttons {
   display: flex;
   justify-content: space-between;
 }
 
-.buttons button {
+form .fa-star {
+  color: rgb(107, 107, 72);
+}
+/* .div button {
   font-size: 25px;
 }
 
-.buttons .fa {
+.div .fa {
   color: grey;
-}
+} */
 
 .favstar {
   margin-top: 5px;
@@ -184,10 +234,10 @@ form {
 
 form label {
   width: 300px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color: #2f4858;
+  color: #192831;
 }
 
 form input {
@@ -204,7 +254,7 @@ form input {
   box-sizing: border-box;
 }
 
-form button {
+#auth button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,7 +302,7 @@ select {
 
 .form-link a {
   text-decoration: none;
-  color: #2f4858;
+  color: #192831;
   margin-left: 7px;
   font-weight: bold;
 }
@@ -278,4 +328,92 @@ select {
 #fav-btn {
   background-color: transparent;
   width: 20px;
+}
+
+/* PROFILE SELECTOR */
+.profile-selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  margin-top: 15px;
+  border-top: 1px solid #19283130;
+  position: absolute;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  left: 0;
+}
+
+.profile-selector button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 50%;
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.profile-selector button:first-of-type {
+  border-right: 1px solid #192831;
+}
+
+.profile-selector .not-selected {
+  border-bottom: 1px solid #19283130;
+}
+
+.profile-selector .selected {
+  background-color: #192831;
+  border: 1px solid #192831;
+  color: #f3f3f3;
+  font-weight: bold;
+  -webkit-transition: 0.5;
+  transition: 0.5;
+}
+
+.profile__my-posts {
+  margin-top: 120px;
+  display: block;
+}
+
+.profile__fav-posts {
+  margin-top: 120px;
+  display: none;
+}
+
+.delete-profile label {
+  padding: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.delete-profile input {
+  padding: 10px;
+  margin: 0;
+  height: 1.8rem;
+  width: 80%;
+}
+.delete-profile select {
+  height: 1.8rem;
+  width: 80%;
+}
+
+.delete-profile button {
+  margin: 10px;
+  padding: 5px;
+}
+.delete-profile a {
+  text-decoration: none;
+  color: white;
+}
+
+.fav-btn img {
+  width: 40%;
 }

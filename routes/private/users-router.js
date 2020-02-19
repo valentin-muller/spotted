@@ -30,9 +30,7 @@ router.get("/delete/:id", (req, res, next) => {
     .catch(err => console.log(err));
 });
 
-// ---------------------------------------------------------
-
-// EDIT PROFILE
+// POST /edit
 router.post("/edit", (req, res, next) => {
   const userId = req.session.currentUser._id;
   const { firstName, lastName, username, password, gender, course } = req.body;
@@ -42,16 +40,14 @@ router.post("/edit", (req, res, next) => {
     { firstName, lastName, username, password, gender, course },
     { new: true }
   )
-    .then(user => {
-      req.session.currentUser = user;
+    .then(() => {
+      // req.session.currentUser = user; <<<<<<<<____ REMOVED IT AND IT FIXED it
       res.redirect("/profile");
     })
     .catch(err => console.log(err));
 });
 
-// ---------------------------------------------------------
-
-// ????
+// GET /edit
 router.get("/edit", (req, res, next) => {
   res.render("private/edit-user", {
     user: req.session.currentUser
@@ -73,12 +69,7 @@ router.get("/:id", (req, res, next) => {
     .catch(err => console.log(err));
 });
 
-// GET	/profile/:id/edit --> Renders the edit form to edit user profile
-// POST	/profile/:id/ --> updates the user info in DB. Redirects to the profile page
-// DELETE	/profile/:id/delete
 router.get("/:id/delete", (req, res, next) => {
-  // console.log('ID TO DELETE', req.params);
-
   User.findOne({
     _id: req.params.id
   })
