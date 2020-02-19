@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www",
+    "start-dev": "nodemon ./bin/www"
+
   },
   "dependencies": {
     "bcrypt": "^3.0.8",
@@ -21,6 +23,9 @@
     "mongoose": "^5.8.12",
     "morgan": "~1.9.1",
     "zxcvbn": "^4.4.2"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "description": "<br>",
   "main": "app.js",
