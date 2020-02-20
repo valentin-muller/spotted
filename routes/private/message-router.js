@@ -118,3 +118,17 @@ msgRouter.get("/fav", (req, res, next) => {
 });
 
 module.exports = msgRouter;
+
+msgRouter.get("/emoji/:type/:messageId", (req, res, next) => {
+  const { type, messageId } = req.params;
+  Message.findOne({ _id: messageId }, { $inc: { [type]: 1 } })
+    .then(message => {})
+    .catch(err => console.log(err));
+});
+
+// GET /messages/emotion/:type/:messageId
+/*
+const {type, messageId} = req.params
+Message.findOne({ _id: messageId}, { $inc : { [type]: 1  } } )
+
+*/

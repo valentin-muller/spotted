@@ -7,8 +7,7 @@ const messageSchema = new Schema(
     date: { type: Date },
     isFavourite: { type: Boolean },
     author: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-    agree: { type: Number },
-    disagree: { type: Number },
+
     smiley: { type: Number },
     crying: { type: Number },
     angry: { type: Number },

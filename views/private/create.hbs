@@ -9,7 +9,7 @@
             <a class="nav-link" href="/profile"><i class="fa fa-user"></i></a>
         </div>
         <div class="col col-xs-4">
-            <a class="nav-link" href="/"><i class="fa fa-star "></i></a>
+            <a class="nav-link" href="/logout"><i class="fa fa-power-off"></i></a>
         </div>
     </div>
 </div>
@@ -22,10 +22,14 @@
             <div id="create-text-area">
                 <form id="my-form" action='/messages/create' method='POST'>
                     <h2>Enter your message</h2>
-                    <p>We want to remember you to be respectful towards other.</p>
+                    <br>
+                    <br>
                     <textarea placeholder='Enter your message' name="mainMessage" maxlength='80' cols="45"
                         rows="15"></textarea>
-                    <button type='submit' class="btn btn-primary text-center msg-button" form="my-form">Submit</button>
+
+                    <br>
+                    <button type='submit' class="btn btn-primary usefull-button text-center msg-button"
+                        form="my-form">Submit</button>
                 </form>
             </div>
         </div>

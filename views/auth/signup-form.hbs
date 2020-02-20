@@ -1,20 +1,16 @@
-<div class="logo-container">
-    <img src="/images/logo.png" alt="app-logo" class="app-logo">
-</div>
 <main>
+    <div class="logo-container">
+        <img src="/images/logo.png" alt="app-logo" class="app-logo">
+    </div>
     <form id='auth' action='/signup' method='POST' class="form form--signup">
 
-        {{!-- <label for=''>Password</label> --}}
-        <input type='text' name='firstName' placeholder="First Name">
+        <input type='text' name='firstName' placeholder="First Name" required>
 
-        {{!-- <label for=''>Password</label> --}}
-        <input type='text' name='lastName' placeholder="Last Name">
+        <input type='text' name='lastName' placeholder="Last Name" required>
 
-        {{!-- <label for=''>Username</label> --}}
-        <input type='text' name='username' placeholder="Username">
+        <input type='text' name='username' placeholder="Username" required>
 
-        {{!-- <label for=''>Password</label> --}}
-        <input type='password' name='password' placeholder="Password">
+        <input type='password' name='password' placeholder="Password" required>
 
 
         <select name='gender' id="gender">

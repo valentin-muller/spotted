@@ -1,35 +1,53 @@
-<form action="/profile/edit" method="post" class="delete-profile">
+<div class="delete-profile">
 
-    <label for=''>Firstname</label>
-    <input type='text' name='firstName' value="{{user.firstName}}">
+    <div class="container">
+        <div class="row">
 
-    <label for=''>Lastname</label>
-    <input type='text' name='lastName' value="{{user.lastName}}">
+            <div class="col col-xs-4">
+                <a class="nav-link" href="/profile"><i class="fa fa-user"></i></a>
+            </div>
+            <div class="col col-xs-4">
+                <a class="nav-link" href="/messages/create"><i class="fa fa-plus"></i></a> </div>
+            <div class="col col-xs-4">
+                <a class="nav-link" href="/logout"><i class="fa fa-power-off"></i></a>
+            </div>
+        </div>
+    </div>
 
-    <label for=''>Username</label>
-    <input type='text' name='username' value="{{user.username}}">
+    <form action="/profile/edit" method="post">
 
-    <label for=''>Password</label>
-    <input type='password' name='password' value="{{user.password}}">
+        <label for=''>Firstname</label>
+        <input type='text' name='firstName' value="{{user.firstName}}">
 
-    <label for=''>Gender</label>
-    <select name="gender" id="" value="{{user.gender}}">
-        <option value="Male" selected>Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
+        <label for=''>Lastname</label>
+        <input type='text' name='lastName' value="{{user.lastName}}">
 
-    </select>
+        <label for=''>Username</label>
+        <input type='text' name='username' value="{{user.username}}">
 
-    <label for='course'>Course</label>
-    <select name="course" id="" value="{{user.course}}">
-        <option value="Web" selected>Web-Dev</option>
-        <option value="UX-UI">UX-UI</option>
-        <option value="Data">Data</option>
-    </select>
+        <label for=''>Password</label>
+        <input type='password' name='password' value="{{user.password}}">
 
-    <button type='submit'>Edit profile</button>
+        <label for=''>Gender</label>
+        <select name="gender" id="" value="{{user.gender}}">
+            <option value="Male" selected>Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
 
-</form>
+        </select>
+
+        <label for='course'>Course</label>
+        <select name="course" id="" value="{{user.course}}">
+            <option value="Web" selected>Web-Dev</option>
+            <option value="UX-UI">UX-UI</option>
+            <option value="Data">Data</option>
+        </select>
+
+        <button class='working-button' type='submit'>Edit profile</button>
+
+        <button><a href="/profile/delete/{{user._id}}">Delete profile</a></button>
+    </form>
 
 
-<button><a href="/profile/delete/{{user._id}}">Delete profile</a></button>
+
+</div>

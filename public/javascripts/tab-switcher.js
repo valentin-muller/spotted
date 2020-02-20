@@ -12,7 +12,6 @@ btnMyPosts.addEventListener("click", () => {
   btnFavPosts.classList.add("not-selected");
 });
 
-
 btnFavPosts.addEventListener("click", () => {
   MyPostsDiv.style.display = "none";
   MyFavPostsDiv.style.display = "block";

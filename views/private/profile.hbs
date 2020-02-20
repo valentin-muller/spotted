@@ -36,10 +36,9 @@
                         <h4>Gender: {{user.gender}}</h4>
                         <h4>Course: {{user.course}}</h4>
                     </div>
-
+                    <button class="usefull-button"><a href="edit">Edit Profile</a></button>
                 </div>
             </div>
-
 
 
 
@@ -53,6 +52,7 @@
                     <div class="card-body">
                         <p>You wrote</p>
                         <h5 class="card-text"> {{this.mainMessage}}</h5>
+                        <hr>
                         <p>{{dateFormat this.created_at 'dddd, MMMM Do YYYY, h:mm'}}</p>
 
                     </div>
@@ -63,17 +63,21 @@
                 {{#each user.favourites}}
                 <div class="card each-message">
                     <div class="card-body">
-
+                        <p>Anonymouse wrote</p>
                         <h5 class="card-text"> {{this.mainMessage}}</h5>
+                        <hr>
                         <p>{{dateFormat this.created_at 'dddd, MMMM Do YYYY, h:mm'}}</p>
 
+
+
                     </div>
+
                 </div>
                 {{/each}}
             </section>
 
 
-            <a href="edit">Click me</a>
+
         </div>
     </div>
 </div>

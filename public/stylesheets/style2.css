@@ -23,7 +23,7 @@ body {
 }
 
 .fa:hover {
-  color: #11595c;
+  color: #11595c !important;
 }
 
 form button {
@@ -35,7 +35,7 @@ form button {
   justify-content: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #e10100ad;
+  background-color: #11595c;
   color: #f3f3f3;
   font-weight: bold;
   top: 0;
@@ -233,7 +233,7 @@ form {
 }
 
 form label {
-  width: 300px;
+  width: 310px;
   margin-bottom: 10px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -263,7 +263,7 @@ form input {
   justify-content: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #e10100ad;
+  background-color: #11595c;
   color: #f3f3f3;
   font-weight: bold;
   padding: 10px;
@@ -318,7 +318,8 @@ select {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-bottom: -50px;
+  margin-bottom: -60px;
+  margin-top: -60px;
 }
 
 .logo-container img {
@@ -330,6 +331,10 @@ select {
   width: 20px;
 }
 
+#fav-btn:focus {
+  outline: none;
+}
+
 /* PROFILE SELECTOR */
 .profile-selector {
   display: -webkit-box;
@@ -338,7 +343,7 @@ select {
   -ms-flex-pack: distribute;
   justify-content: space-around;
   margin-top: 15px;
-  border-top: 1px solid #19283130;
+  border-top: 1px solid #11595c;
   position: absolute;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -362,16 +367,16 @@ select {
 }
 
 .profile-selector button:first-of-type {
-  border-right: 1px solid #192831;
+  border-right: 1px solid #11595c;
 }
 
 .profile-selector .not-selected {
-  border-bottom: 1px solid #19283130;
+  border-bottom: 1px solid #11595c;
 }
 
 .profile-selector .selected {
-  background-color: #192831;
-  border: 1px solid #192831;
+  background-color: #11595c;
+  border: 1px solid #11595c;
   color: #f3f3f3;
   font-weight: bold;
   -webkit-transition: 0.5;
@@ -395,7 +400,7 @@ select {
 }
 
 .delete-profile input {
-  padding: 10px;
+  padding: 5px;
   margin: 0;
   height: 1.8rem;
   width: 80%;
@@ -408,12 +413,44 @@ select {
 .delete-profile button {
   margin: 10px;
   padding: 5px;
+  background-color: #11595c;
+  border: none;
 }
 .delete-profile a {
   text-decoration: none;
   color: white;
 }
 
+.delete-profile {
+  padding: 0;
+}
 .fav-btn img {
   width: 40%;
+}
+
+/* LANDING */
+.landing {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #119da4;
+  height: 100vh;
+  padding: 20px;
+}
+
+.jumbotron {
+  padding: 10px;
+  background-color: transparent;
+}
+
+.usefull-button {
+  background-color: #11595c;
+  border: none;
+}
+
+.usefull-button a {
+  text-decoration: none;
+  color: white;
 }

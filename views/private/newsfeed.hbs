@@ -1,10 +1,7 @@
 <div class="newsfeed">
-
-
     {{!-- NAVBAR --}}
     <div class="container ">
         <div class="row">
-
             <div class="col col-xs-4">
                 <a class="nav-link" href="/profile"><i class="fa fa-user"></i></a>
             </div>
@@ -17,8 +14,6 @@
             </div>
         </div>
     </div>
-
-
     {{#each messageArr}}
     <div class="card each-message">
         <div class="card-body" id="card-body">
@@ -26,16 +21,11 @@
                 <p class="card-title">Anonymous <span class=>{{author.gender}}</span> from <span
                         class="green">{{author.course}}</span> just
                     said...</p>
-
                 <h5 class="card-text">... {{this.mainMessage}}</h5>
             </div>
-
-
             <form class="fav-form" action="/messages/fav?_id={{this._id}}" method="POST">
                 <input type="text" value='{{this._id}}' style="display:none">
                 <button id="fav-btn" type="submit">
-                    {{!-- <button id="fav-btn" type="submit"><img src="/images/add-fav.png" style="width:30px" alt=""></button> --}}
-                    {{!-- <button id="fav-btn" type="submit"><i class="fa fa-star "></i></button> --}}
                     {{#if this.isFavourite}}
                     <img src="/images/remove-fav.png" style='width:30px' alt="">
                     {{else}}
@@ -43,32 +33,12 @@
                     {{/if}}
                 </button>
             </form>
-
-
         </div>
-
+        <hr>
         <div class="datebody">
             <p>Posted: {{dateFormat this.created_at 'Do MMMM  YYYY, h:mm'}}</p>
         </div>
-        <hr>
-        <div class="buttons">
-            <div class="emojiis">
-
-                <button><a href="">&#128512</a>:12</button><span>{{counter}}</span>
-                <button><a href="">&#128514</a>:10</button><span>{{counter}}</span>
-                <button><a href="">&#128525</a>:11</button><span>{{counter}}</span>
-                <button><a href="">&#128530</a>:8</button><span>{{counter}}</span>
-                <button><a href="">&#128545</a>1</button><span>{{counter}}</span>
-            </div>
-
-
-
-        </div>
-
-
-
-
-
+        <br>
 
     </div>
 </div>
